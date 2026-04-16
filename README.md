@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![NLTK](https://img.shields.io/badge/NLTK-NLP-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-A complete Naive Bayes text classifier built from first principles — no sklearn, no shortcuts. Implements the full probabilistic pipeline for binary spam/not-spam classification, including the zero-probability problem and Laplace smoothing.
+A complete Naive Bayes text classifier built from first principles (no sklearn, no shortcuts). Implements the full probabilistic pipeline for binary spam/not-spam classification, including the zero-probability problem and Laplace smoothing.
 
 ## What This Project Covers
 
@@ -40,7 +40,7 @@ Then open `spam_classifier.ipynb` in Jupyter.
 
 **Why "Naive"?** The model assumes all tokens are conditionally independent given the class. In practice this is rarely true, but it makes computation efficient and often performs well on text data.
 
-**The Zero Problem:** If a token appears in spam but never in not-spam training documents, P(token | not_spam) = 0. Multiplied across all tokens, the entire not-spam score becomes zero — even if other tokens strongly suggest legitimate email.
+**The Zero Problem:** If a token appears in spam but never in not-spam training documents, P(token | not_spam) = 0. Multiplied across all tokens, the entire not-spam score becomes zero, even if other tokens strongly suggest legitimate email.
 
 **Laplace Fix:** Add 1 to every count and add vocabulary size V to the denominator. No probability is ever exactly zero:
 
